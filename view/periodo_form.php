@@ -36,7 +36,7 @@ if(!isset($id))
   	 <script src="js/lib.js"></script>
      
      </head>
-     <title>Cadastro de periodos</title>
+     <title>Cadastro dos Horários</title>
      <body>
 
 <!-- menu esquerdo -->

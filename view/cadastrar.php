@@ -1,13 +1,14 @@
-﻿<?php
+<?php
 
-require_once "seguranca.php";
-require_once "../controller/usuarioController.php";
+//require_once "seguranca.php";
+require_once "../controller/usuarioControllerCadastro.php";
 
-$usuarioController = new UsuarioController();
+$usuarioControllerCadastro = new usuarioControllerCadastro();
 
-$usuario = $usuarioController->excluir();
-$usuario = $usuarioController->salvar();
-$usuario = $usuarioController->abrir();
+$usuario = $usuarioControllerCadastro->salvarUser();
+$usuario = $usuarioControllerCadastro->abrir();
+$usuario = $usuarioControllerCadastro->voltar();
+
 if(isset($usuario[0]))
 extract($usuario[0]);
 
@@ -16,8 +17,8 @@ if(!isset($id))
 	$nome = '';
 	$email = '';
 	$senha = '';
-    $tipo = '';
-	$id = 0;	
+	$id = 0;
+	
 }
 
 ?>
@@ -40,7 +41,7 @@ if(!isset($id))
      <body>
 
 <!-- menu esquerdo -->
-<?php include "menu_esquerdo.php"; ?>
+
 
 <!-- conteudo -->
 
@@ -71,20 +72,11 @@ if(!isset($id))
     <td ></td>
 </tr>
 
-<tr>
-    <td width="100"> Tipo </td>
-    <td> <input type="text" name="tipo" value="<?= $tipo ?>" /> </td>
-    <td width="30"></td>
-    <td width="30"></td>
-    <td width="100"> </td>
-    <td ></td>
-</tr>
-
 </table>
 
 <input type="submit" name="salvar" value="Salvar" class="btn1" />
 
-<input type="submit" name="excluir" value="Excluir" class="btn1" />
+<input type="submit" name="voltar" value="Voltar" class="btn1" />
 
 </form>
 

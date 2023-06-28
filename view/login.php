@@ -4,7 +4,9 @@ require_once "config.php";
 require_once "../controller/usuarioController.php";
 
 $usuarioController = new UsuarioController();
+
 $errormsg = $usuarioController->autenticarController();
+//$usuario = $usuarioController->cadastrar();
 
 ?>
 
@@ -32,8 +34,7 @@ body,td,th {
 <img src="img/naturezaViva.jpg" width="478" height="320" />
     <div id="aviso">
     
-    <h3>Clique, Informe e Reserve</h3> 
-    A forma mais pr&aacute;tica e simples de reservar salas de aula, laborat&oacute;rios e outros espa&ccedil;os.</div>
+</div>
 
 </div>
 
@@ -41,10 +42,9 @@ body,td,th {
 
 <br />
 <br />
-<img src="img/logoViva.png" alt="Sistema de Reservas de Salas de Aula" title="Sistema de Reservas de Salas de Aula" width="220" height="72" />
+<img src="img/logoViva.png" alt="Sistema de Aluguel de espaços" title="Sistema de Aluguel de espaços" width="220" height="72" />
 <br />
 <br />
-versão <strong>1.2</strong>&nbsp;<br />
 <span style="color:#900"><?php echo $errormsg; ?></span><br />
 
 <input type="text" name="email" id="email" placeholder="E-mail"  />
@@ -57,6 +57,8 @@ versão <strong>1.2</strong>&nbsp;<br />
 
 
 <input type="submit" name="entrar" value="Entrar" class="btn1" />
+
+<input class="btn1" type="button" name="cadastrar" value="Cadastrar-se" onclick="location.href='cadastrar.php';" />
 
 </div>
 </div>

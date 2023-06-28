@@ -65,11 +65,11 @@ foreach($a_options_status as $opt_stat)
 
 <input type="text" placeholder="dia" name="dia" id="dia" value="<?= $dia ?>"><BR>
 
-<input type="text" placeholder="Professor" name="professor" id="professor" value="<?= $professor_desc ?>" ><BR>
+<input type="text" placeholder="Responsável" name="professor" id="professor" value="<?= $professor_desc ?>" ><BR>
 
-<input type="text" placeholder="Disciplina" name="disciplina" id="disciplina" value="<?= $disciplina_desc ?>"><BR>
+<input type="text" placeholder="Motivo Aluguel" name="disciplina" id="disciplina" value="<?= $disciplina_desc ?>"><BR>
 
-<input type="text" placeholder="Obsrvação" name="observacao" id="observacao" value="<?= $observacao ?>" ><BR>
+<input type="text" placeholder="Observação" name="observacao" id="observacao" value="<?= $observacao ?>" ><BR>
 
 <select name="status" id="status" ><?= $options_status; ?></select><BR>
 

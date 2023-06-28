@@ -49,7 +49,7 @@ class Usuario
 		{ // atualizar
 			
 			if($email != '')
-			$and = ' ,senha = (\''.$senha.'\')  ';
+			$and = ' ,senha = md5(\''.$senha.'\')  ';
 			else
 			$and = '';
 			

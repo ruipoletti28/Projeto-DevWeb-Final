@@ -41,7 +41,7 @@ $total_reservas =  $dsc->totalReservasController();
 <!-- conteudo -->
 <div class="corpo">
 
-<h3> Total de reservas por disciplina </h3>
+<h3> Total de reservas</h3>
 
 <table class="lista_comum" cellpadding="4" cellspacing="4">
 
@@ -55,7 +55,7 @@ $total_reservas =  $dsc->totalReservasController();
 
 </table>
 
-<h3> Taxa de ocupação das salas </h3>
+<h3> Taxa de ocupação</h3>
 <div id="chart_div"></div>
 
  <script type="text/javascript" src="https://www.google.com/jsapi"></script>

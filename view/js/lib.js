@@ -15,7 +15,7 @@
 		// limpa o CSS das outras tabelas
 		$(".corpo td").css("background-color", ""); 
 		// o item selecionado fica verde.
-		$(o).css("background-color", "#CAF4D5"); 
+		$(o).css("background-color", "#FFFFFF"); 
 	//abre o formulario por AJAX preenchido
 	$.ajax({
 		type: "GET",

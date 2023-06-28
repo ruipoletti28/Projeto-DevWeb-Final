@@ -1,4 +1,4 @@
-x<?php
+<?php
 
 require_once "seguranca.php";
 require_once ("../controller/dashboardController.php");
