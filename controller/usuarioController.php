@@ -1,7 +1,7 @@
 ﻿<?php
 
 require "util.php";
-require "../model/usuario.php";
+require "../model/UsuarioAdmin.php";
 
 class UsuarioController
 {
@@ -23,7 +23,7 @@ class UsuarioController
 			}
 			
 			$usuario = new Usuario();
-			$usuario->salvar($id,$nome, $email,$senha, $tipo);
+			$usuario->salvar($id,$nome, $email,$senha,$tipo);
 			header("Location: usuario_list.php");
 			exit();
 		}
@@ -40,6 +40,28 @@ class UsuarioController
 			$usuario->excluir($id);
 		
 			header("Location: usuario_list.php");
+			exit();
+				
+		}
+	}
+
+	function voltar()
+	{
+		
+		if(isset($_POST['voltar']))
+		{
+			header("Location: login.php");
+			exit();
+				
+		}
+	}
+
+	function cadastrar()
+	{
+		
+		if(isset($_POST['cadastrar']))
+		{
+			header("Location: login.php");
 			exit();
 				
 		}
@@ -83,27 +105,29 @@ class UsuarioController
 	// função de autenticação de usuário
     function autenticarController()
     {
-        if(isset($_POST['email']) && isset($_POST['senha']) && isset($_POST['tipo']))
+        if(isset($_POST['email']) && isset($_POST['senha']))
         {
 			//MD5($_POST)
             $senha = ($_POST['senha']);
             $email = Util::clearparam($_POST['email']);
-			$tipo = ($_POST['tipo']);
+			//$tipo = ($_POST['tipo']);
             
             $usuario = new Usuario();
             
-            $row = $usuario->autenticar($email, $senha, $tipo);
+            $row = $usuario->autenticar($email, $senha);
 
             // encontrou usuário
             if(isset($row[0]['id']))
             {
-                session_start();
-                
                 // Verifica o tipo de usuário
-                if ($tipo === 'admin') {
-                    header("Location: admin_dashboard.php"); // página do administrador
+                if ($tipo == 'admin') {
+					session_start();
+                	$_SESSION['user_id'] = $row[0]['id'];
+                    header("Location: indexAdmin.php"); // página do administrador
                 } else {
-                    header("Location: user_dashboard.php"); // página do usuário normal
+					session_start();
+                	$_SESSION['user_id'] = $row[0]['id'];
+                    header("Location: index.php"); // página do usuário normal
                 }
                 exit();
             }
